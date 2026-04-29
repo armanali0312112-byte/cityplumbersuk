@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Plumbers | 24/7 Professional Plumbing & Heating London</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/logo.png" type="image/x-icon">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .nav-link { position: relative; }
+        .nav-link::after {
+            content: ''; position: absolute; width: 0; height: 2px;
+            bottom: -4px; left: 0; background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after { width: 100%; }
+        .page-transition { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .glass-card { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.3); }
+        .slider-dot.active { background-color: #2563eb; width: 1.5rem; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 overflow-x-hidden">
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+            
+            <div class="flex items-center cursor-pointer group" onclick="showPage('home')">
+                <img src="img/logo.png" alt="City Plumbers Logo" class="h-14 w-auto object-contain transition-transform duration-300 group-hover:scale-105">
+            </div>
+
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="javascript:void(0)" onclick="showPage('home')" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="javascript:void(0)" onclick="showPage('about')" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">About Us</a>
+                <a href="javascript:void(0)" onclick="showPage('services')" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Services</a>
+                <a href="javascript:void(0)" onclick="showPage('prices')" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Prices</a>
+                <a href="javascript:void(0)" onclick="showPage('book')" class="nav-link text-sm font-semibold text-slate-700 hover:text-blue-600 transition-colors">Book Online</a>
+                <a href="javascript:void(0)" onclick="showPage('contact')" class="bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-blue-700 hover:shadow-xl hover:-translate-y-0.5 transition-all">Contact Us</a>
+            </div>
+
+            <button class="md:hidden text-slate-900 p-2" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars-staggered text-2xl"></i>
+            </button>
+        </div>
+    </div>
+    
+    <div class="hidden md:hidden bg-white border-t border-slate-100 p-6 space-y-4 shadow-2xl" id="mobile-menu">
+        <a href="javascript:void(0)" onclick="showPage('home')" class="block text-lg font-bold text-slate-900">Home</a>
+        <a href="javascript:void(0)" onclick="showPage('about')" class="block text-lg font-bold text-slate-900">About Us</a>
+        <a href="javascript:void(0)" onclick="showPage('services')" class="block text-lg font-bold text-slate-900">Services</a>
+        <a href="javascript:void(0)" onclick="showPage('prices')" class="block text-lg font-bold text-slate-900">Prices</a>
+        <a href="javascript:void(0)" onclick="showPage('book')" class="block text-lg font-bold text-slate-900">Book Online</a>
+        <button onclick="showPage('contact')" class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg shadow-lg">Contact Us</button>
+    </div>
+</nav>
+    <main class="mt-20">
+        <section id="home" class="page-transition">
+            <div class="relative h-[650px] overflow-hidden bg-slate-900 group">
+    <div class="absolute inset-0 flex transition-transform duration-1000 ease-in-out" id="slider">
+        
+        <div class="min-w-full relative">
+            <img src="img/hero1.png" class="w-full h-full object-cover opacity-50" alt="Plumbing Service">
+            <div class="absolute inset-0 flex items-center px-6 lg:px-20">
+                <div class="max-w-3xl space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Affordable and reliable <span class="text-blue-500">Plumbing & Heating</span> service in London</h1>
+                    <p class="text-lg text-slate-200">Contact us 24/7 all year round for all your plumbing and heating services in London</p>
+                    <div class="flex flex-wrap gap-4 pt-4">
+                        <button href="tel:02071125117" class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-lg shadow-blue-600/30" >Call Now</button>
+                        <button class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-10 py-4 rounded-full font-bold hover:bg-white/20 transition-all">Get Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-full relative">
+            <img src="img/hero2.png" class="w-full h-full object-cover opacity-50" alt="Boiler Repair">
+            <div class="absolute inset-0 flex items-center px-6 lg:px-20 text-center mx-auto">
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Expert Boiler Installations & Emergency Repairs</h1>
+                    <p class="text-lg text-slate-200">Gas Safe registered engineers available for immediate response across all London postcodes.</p>
+                    <div class="flex justify-center gap-4 pt-4">
+                        <button class="bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:scale-105 transition-all">Book Online</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="min-w-full relative">
+            <img src="img/hero3.png" class="w-full h-full object-cover opacity-50" alt="Luxury Bathroom">
+            <div class="absolute inset-0 flex items-center px-6 lg:px-20 justify-end">
+                <div class="max-w-3xl space-y-6 text-right">
+                    <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">Luxury Bathroom Design & Full Fit-Outs</h1>
+                    <p class="text-lg text-slate-200">Transform your home with our premium installation services and expert craftsmanship.</p>
+                    <div class="flex justify-end gap-4 pt-4">
+                        <button class="bg-white text-slate-900 px-10 py-4 rounded-full font-bold hover:scale-105 transition-all">View Our Gallery</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+        <button onclick="goToSlide(0)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" id="dot-0"></button>
+        <button onclick="goToSlide(1)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" id="dot-1"></button>
+        <button onclick="goToSlide(2)" class="dot w-3 h-3 rounded-full bg-white/40 transition-all duration-300" id="dot-2"></button>
+    </div>
+</div>
+
+            <div class="max-w-7xl mx-auto px-6 -mt-20 relative z-10 grid md:grid-cols-3 gap-8">
+                <div class="glass-card p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="w-14 h-14 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Emergency Support</h3>
+                    <p class="text-slate-600 text-sm">24/7 emergency call-outs, immediate response and affordable problem-solving all year round.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Routine Maintenance</h3>
+                    <p class="text-slate-600 text-sm">Scheduled maintenance for all your plumbing, boiler and heating systems in London.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition-all">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center text-2xl mb-6"><i class="fa-solid fa-comments"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Free Advice</h3>
+                    <p class="text-slate-600 text-sm">Expert and free guidance for your plumbing and heating queries and questions.</p>
+                </div>
+            </div>
+
+            <div class="py-24 max-w-7xl mx-auto px-6 space-y-32">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="img/Services1.png" alt="Service">
+                    </div>
+                    <div class="space-y-6">
+                        <h2 class="text-4xl font-extrabold tracking-tight">Trusted Plumbing Services for your Every Need</h2>
+                        <p class="text-slate-600 leading-relaxed">From leak repairs to full installations, our team delivers unmatched plumbing expertise in London tailored to address your specific requirements.</p>
+                        <button href="tel:02071125117" class="bg-slate-900 text-white px-8 py-3 rounded-full font-bold hover:shadow-lg transition-all">Call Now</button>
+                    </div>
+                </div>
+
+                <div class="relative overflow-hidden rounded-[3rem] bg-slate-900">
+    <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7edd?auto=format&fit=crop&q=80&w=1200" 
+         class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Heating Engineering">
+    
+    <div class="relative z-10 p-12 text-white grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+            <h2 class="text-4xl font-extrabold leading-tight">Comprehensive Heating Solutions Tailored for You</h2>
+            <p class="text-blue-100/80 text-lg">Heating system maintenance, repairs, and installations done right, with a focus on efficiency and customer satisfaction.</p>
+            
+            <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <li class="flex items-center gap-3 font-medium"><i class="fa-solid fa-circle-check text-blue-400"></i> Quick Repairs</li>
+                <li class="flex items-center gap-3 font-medium"><i class="fa-solid fa-circle-check text-blue-400"></i> Boiler Installations</li>
+                <li class="flex items-center gap-3 font-medium"><i class="fa-solid fa-circle-check text-blue-400"></i> Energy Upgrades</li>
+                <li class="flex items-center gap-3 font-medium"><i class="fa-solid fa-circle-check text-blue-400"></i> 24/7 Support</li>
+            </ul>
+        </div>
+
+        <div class="glass-card bg-white/10 backdrop-blur-xl rounded-[2rem] p-10 border border-white/20 text-center shadow-2xl">
+            <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg shadow-blue-500/40">
+                <i class="fa-solid fa-headset text-2xl animate-pulse"></i>
+            </div>
+            <h4 class="text-2xl font-bold mb-2">Need Help Now?</h4>
+            <p class="text-blue-100 mb-8 font-medium">Always At Your Service</p>
+            
+            <a href="tel:02071125117" 
+               class="flex items-center justify-center gap-3 w-full bg-white text-slate-900 py-5 rounded-2xl font-extrabold text-2xl hover:bg-blue-50 transition-all hover:scale-[1.02] active:scale-95 shadow-xl">
+                <i class="fa-solid fa-phone-flip text-blue-600"></i>
+                0207 112 5117
+            </a>
+            
+            <p class="mt-4 text-xs text-blue-200/60 uppercase tracking-widest font-bold">Immediate Response Guaranteed</p>
+        </div>
+    </div>
+</div>
+
+             <div class="space-y-12 py-16">
+    <div class="text-center space-y-4">
+        <h2 class="text-4xl font-extrabold text-slate-900 tracking-tight">Expert Plumbing Insights</h2>
+        <p class="text-slate-500 max-w-2xl mx-auto">Explore our latest advice to keep your home’s systems running efficiently and prevent costly repairs.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6 max-w-7xl mx-auto">
+        
+        <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 p-4">
+            <div class="rounded-2xl overflow-hidden h-40 mb-4 relative">
+                <img src="https://images.unsplash.com/photo-1585704032915-c3400ca1f963?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase">Efficiency</div>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-3">Seasonal Savings</h4>
+            <details class="group/detail mb-4">
+                <summary class="list-none cursor-pointer text-blue-600 text-sm font-semibold flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    Read Tip <i class="fa-solid fa-chevron-down group-open/detail:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-3 rounded-xl">Lower your bills by insulating exposed pipes before winter. This prevents heat loss and stops pipes from freezing during London cold snaps.</p>
+            </details>
+            <a href="tel:02071125117" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-all">
+                <i class="fa-solid fa-phone mr-2 text-[10px]"></i> Call Now
+            </a>
+        </div>
+
+        <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 p-4">
+            <div class="rounded-2xl overflow-hidden h-40 mb-4 relative">
+                <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase">Routine</div>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-3">Maintenance Musts</h4>
+            <details class="group/detail mb-4">
+                <summary class="list-none cursor-pointer text-blue-600 text-sm font-semibold flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    Read Tip <i class="fa-solid fa-chevron-down group-open/detail:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-3 rounded-xl">Bleed your radiators twice a year to remove trapped air. This ensures your heating system heats up faster and uses less energy.</p>
+            </details>
+            <a href="tel:02071125117" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-all">
+                <i class="fa-solid fa-phone mr-2 text-[10px]"></i> Call Now
+            </a>
+        </div>
+
+        <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 p-4">
+            <div class="rounded-2xl overflow-hidden h-40 mb-4 relative">
+                <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase">Boilers</div>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-3">Heating Hacks</h4>
+            <details class="group/detail mb-4">
+                <summary class="list-none cursor-pointer text-blue-600 text-sm font-semibold flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    Read Tip <i class="fa-solid fa-chevron-down group-open/detail:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-3 rounded-xl">Keep your boiler pressure between 1.0 and 1.5 bar. Low pressure reduces efficiency, while high pressure can damage components.</p>
+            </details>
+            <a href="tel:02071125117" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-all">
+                <i class="fa-solid fa-phone mr-2 text-[10px]"></i> Call Now
+            </a>
+        </div>
+
+        <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 p-4">
+            <div class="rounded-2xl overflow-hidden h-40 mb-4 relative">
+                <img src="https://images.unsplash.com/photo-1504148455328-43769c182029?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase">Prevention</div>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-3">Leak Detection</h4>
+            <details class="group/detail mb-4">
+                <summary class="list-none cursor-pointer text-blue-600 text-sm font-semibold flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    Read Tip <i class="fa-solid fa-chevron-down group-open/detail:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-3 rounded-xl">Check your water meter before and after a 2-hour period of no water use. If it changes, you likely have a hidden leak.</p>
+            </details>
+            <a href="tel:02071125117" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-all">
+                <i class="fa-solid fa-phone mr-2 text-[10px]"></i> Call Now
+            </a>
+        </div>
+
+        <div class="group bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 p-4">
+            <div class="rounded-2xl overflow-hidden h-40 mb-4 relative">
+                <img src="https://images.unsplash.com/photo-1595834371199-6d7741f71428?auto=format&fit=crop&q=80&w=400" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase">Drainage</div>
+            </div>
+            <h4 class="font-bold text-lg text-slate-900 mb-3">Drain Care</h4>
+            <details class="group/detail mb-4">
+                <summary class="list-none cursor-pointer text-blue-600 text-sm font-semibold flex items-center gap-2 hover:text-blue-700 transition-colors">
+                    Read Tip <i class="fa-solid fa-chevron-down group-open/detail:rotate-180 transition-transform"></i>
+                </summary>
+                <p class="text-xs text-slate-600 mt-2 leading-relaxed bg-slate-50 p-3 rounded-xl">Never pour fat or grease down the sink. It solidifies in cold pipes, leading to major blockages and "fatbergs" in your drainage system.</p>
+            </details>
+            <a href="tel:02071125117" class="block w-full text-center bg-slate-900 text-white py-3 rounded-xl text-sm font-bold hover:bg-blue-600 transition-all">
+                <i class="fa-solid fa-phone mr-2 text-[10px]"></i> Call Now
+            </a>
+        </div>
+
+    </div>
+</div>
+               <div class="bg-slate-100 rounded-[3rem] p-8 md:p-16 overflow-hidden">
+    <div class="flex flex-col items-center mb-12 space-y-4">
+        <div class="flex items-center gap-3">
+            <img src="img/icons8-google.svg" class="h-8" alt="Google">
+            <span class="text-2xl font-black text-slate-900">Reviews</span>
+        </div>
+        <div class="flex items-center gap-4 bg-white px-6 py-3 rounded-2xl shadow-sm border border-slate-200">
+            <span class="text-3xl font-black text-slate-900">5.0</span>
+            <div class="flex text-yellow-400 text-lg">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-slate-500 font-bold text-sm">90+ Reviews</span>
+        </div>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-center text-slate-900">Hear From Our Customers</h2>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto overflow-hidden">
+        <div class="flex transition-transform duration-700 ease-in-out" id="review-slider">
+            
+            <div class="min-w-full md:min-w-[33.33%] px-4">
+                <div class="bg-white p-8 rounded-3xl shadow-sm h-full flex flex-col border border-slate-100">
+                    <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed flex-grow">"Amazing contractor who helped solve my problems in my home. Jad in particular was the most helpful. So happy with the service!"</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center font-bold">N</div>
+                        <div><h5 class="font-bold text-slate-900 text-sm">Narmin Anadif</h5><p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Verified Local Guide</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-full md:min-w-[33.33%] px-4">
+                <div class="bg-white p-8 rounded-3xl shadow-sm h-full flex flex-col border border-slate-100">
+                    <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed flex-grow">"Honestly the best experience we have had with any plumber in London in 15+ years. He was so efficient and friendly."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center font-bold">L</div>
+                        <div><h5 class="font-bold text-slate-900 text-sm">Louise Hodgson</h5><p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">London Resident</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-full md:min-w-[33.33%] px-4">
+                <div class="bg-white p-8 rounded-3xl shadow-sm h-full flex flex-col border border-slate-100">
+                    <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed flex-grow">"Turned up on time, got the job done quickly, and the price was fair. Reliable and straightforward. Highly recommend."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-slate-100 text-slate-600 rounded-full flex items-center justify-center font-bold">R</div>
+                        <div><h5 class="font-bold text-slate-900 text-sm">Rupert Blagden</h5><p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">9 Reviews · 5 Photos</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-full md:min-w-[33.33%] px-4">
+                <div class="bg-white p-8 rounded-3xl shadow-sm h-full flex flex-col border border-slate-100">
+                    <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed flex-grow">"Harry did a great job solving drainage issues. The company is great as they provide same day service for urgent issues."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center font-bold">S</div>
+                        <div><h5 class="font-bold text-slate-900 text-sm">Sim Sokheng</h5><p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">Local Guide</p></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="min-w-full md:min-w-[33.33%] px-4">
+                <div class="bg-white p-8 rounded-3xl shadow-sm h-full flex flex-col border border-slate-100">
+                    <div class="flex text-yellow-400 mb-4 text-xs"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p class="text-slate-600 text-sm italic leading-relaxed flex-grow">"Jad responded within hours. Quickly identified the issue and gave several options for repair. Professional and informative."</p>
+                    <div class="mt-6 flex items-center gap-3">
+                        <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-full flex items-center justify-center font-bold">P</div>
+                        <div><h5 class="font-bold text-slate-900 text-sm">Paul T Huff</h5><p class="text-[10px] text-slate-400 uppercase font-bold tracking-tighter">1 Review</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-12 text-center">
+        <a href="https://maps.app.goo.gl/VD95MiKaPctLWMf5A" target="_blank" 
+           class="inline-flex items-center gap-3 bg-white text-slate-900 px-8 py-4 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all border border-slate-200">
+            <img src="img/icons8-google.svg" class="h-5" alt="Google">
+            Review us on Google
+        </a>
+    </div>
+</div>
+               <div class="max-w-3xl mx-auto space-y-12 py-16">
+    <div class="text-center space-y-4">
+        <h2 class="text-4xl font-extrabold tracking-tight text-slate-900">Frequently Asked Questions</h2>
+        <p class="text-slate-500">Everything you need to know about our premium plumbing and heating services.</p>
+    </div>
+
+    <div class="space-y-4 px-6">
+        <details class="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer overflow-hidden">
+            <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                What are your service hours? 
+                <span class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition-all">
+                    <i class="fa-solid fa-plus group-open:rotate-45 transition-all"></i>
+                </span>
+            </summary>
+            <div class="mt-4 text-slate-600 leading-relaxed border-t border-slate-50 pt-4">
+                <p>Our team is available 24/7, including holidays, for emergency call-outs all year round.</p>
+                <div class="mt-3 flex items-center gap-2 text-blue-600 font-bold text-sm bg-blue-50 w-fit px-3 py-1 rounded-lg">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    All of our work comes with a 12 months warranty
+                </div>
+            </div>
+        </details>
+
+        <details class="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                What payment methods do you accept?
+                <span class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition-all">
+                    <i class="fa-solid fa-plus group-open:rotate-45 transition-all"></i>
+                </span>
+            </summary>
+            <div class="mt-4 text-slate-600 leading-relaxed border-t border-slate-50 pt-4 flex items-center gap-4">
+                <p>We accept cash and all major credit and debit cards.</p>
+                <div class="flex gap-2 text-slate-400 text-xl">
+                    <i class="fa-brands fa-cc-visa"></i>
+                    <i class="fa-brands fa-cc-mastercard"></i>
+                    <i class="fa-brands fa-cc-apple-pay"></i>
+                </div>
+            </div>
+        </details>
+
+        <details class="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                Do you provide emergency call outs?
+                <span class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition-all">
+                    <i class="fa-solid fa-plus group-open:rotate-45 transition-all"></i>
+                </span>
+            </summary>
+            <div class="mt-4 text-slate-600 leading-relaxed border-t border-slate-50 pt-4">
+                <p>Yes we do, 24/7 all year round, please call us to book in an emergency plumber.</p>
+                <a href="tel:02071125117" class="inline-block mt-4 text-blue-600 font-bold hover:underline">
+                    Call 0207 112 5117 Now →
+                </a>
+            </div>
+        </details>
+
+        <details class="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                How do I get a quote?
+                <span class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition-all">
+                    <i class="fa-solid fa-plus group-open:rotate-45 transition-all"></i>
+                </span>
+            </summary>
+            <p class="mt-4 text-slate-600 leading-relaxed border-t border-slate-50 pt-4">
+                Please click on our ‘Get Quote’ link or alternatively call us for an estimate over the phone.
+            </p>
+        </details>
+
+        <details class="group bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all cursor-pointer">
+            <summary class="flex justify-between items-center font-bold text-lg text-slate-800 list-none">
+                Can I schedule regular maintenance?
+                <span class="w-8 h-8 bg-slate-50 rounded-full flex items-center justify-center group-open:bg-blue-600 group-open:text-white transition-all">
+                    <i class="fa-solid fa-plus group-open:rotate-45 transition-all"></i>
+                </span>
+            </summary>
+            <p class="mt-4 text-slate-600 leading-relaxed border-t border-slate-50 pt-4">
+                Absolutely, we offer flexible scheduling for all your plumbing and heating systems to keep them running smoothly.
+            </p>
+        </details>
+    </div>
+</div>
+        </section>
+
+        <section id="about" class="hidden page-transition py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center max-w-3xl mx-auto mb-20 space-y-4">
+                    <h2 class="text-blue-600 font-bold uppercase tracking-widest text-sm">About Us</h2>
+                    <h1 class="text-4xl md:text-5xl font-extrabold">London’s Leading 24 Hour Plumbing & Heating Service</h1>
+                </div>
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <div class="space-y-6 text-slate-600 leading-relaxed">
+                        <p>Founded in 2018, City Plumbers was established to address the need for experienced and professional plumbers at competitive rates. With a cumulative plumbing experience exceeding 100 years, our team of fully qualified engineers leverage their individual expertise...</p>
+                        <div class="bg-blue-50 border-l-4 border-blue-600 p-8 rounded-r-2xl">
+                            <h3 class="text-xl font-bold text-slate-900 mb-2">Transparent Prices</h3>
+                            <p>We do not charge for: call-outs, travelling, Congestion, ULEZ, or have any other hidden charges.</p>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="img/plumber.png" class="rounded-2xl shadow-lg" alt="Team">
+                        <img src="img/team.png" class="rounded-2xl shadow-lg mt-8" alt="Team">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="prices" class="hidden page-transition py-24">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h1 class="text-5xl font-extrabold mb-4">Simple and Transparent Pricing</h1>
+                    <p class="text-slate-500">No Call out fee – No Congestion charge – No Ulez charge – No Hidden charges</p>
+                </div>
+                
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
+                        <h3 class="text-xl font-bold mb-6 border-b pb-4">MON-FRI 8AM – 6PM</h3>
+                        <table class="w-full text-left">
+                            <tr class="border-b"><th class="py-4">Service</th><th class="py-4 text-right">Rate</th></tr>
+                            <tr class="border-b"><td class="py-4 font-medium">Plumber</td><td class="py-4 text-right font-bold">£120</td></tr>
+                            <tr class="border-b"><td class="py-4 font-medium">Heating & Gas Work</td><td class="py-4 text-right font-bold">£120</td></tr>
+                            <tr class="border-b"><td class="py-4 font-medium">Gas Safety Certificate</td><td class="py-4 text-right font-bold">£99</td></tr>
+                            <tr><td class="py-4 font-medium">Boiler Service</td><td class="py-4 text-right font-bold">£99</td></tr>
+                        </table>
+                    </div>
+                    <div class="bg-slate-900 text-white rounded-3xl p-8 shadow-2xl">
+                        <h3 class="text-xl font-bold mb-6 border-b border-slate-800 pb-4">SAT-SUN OVERNIGHT</h3>
+                        <table class="w-full text-left">
+                            <tr class="border-b border-slate-800"><th class="py-4">Service</th><th class="py-4 text-right">Rate</th></tr>
+                            <tr class="border-b border-slate-800"><td class="py-4 font-medium">Plumber</td><td class="py-4 text-right font-bold">£210</td></tr>
+                            <tr class="border-b border-slate-800"><td class="py-4 font-medium">Heating & Gas Work</td><td class="py-4 text-right font-bold">£210</td></tr>
+                            <tr class="border-b border-slate-800"><td class="py-4 font-medium">Gas Safety Certificate</td><td class="py-4 text-right font-bold">£210</td></tr>
+                            <tr><td class="py-4 font-medium">Boiler Service</td><td class="py-4 text-right font-bold">£210</td></tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="book" class="hidden page-transition py-24">
+            <div class="max-w-3xl mx-auto px-6 bg-white p-12 rounded-[2rem] shadow-xl border border-slate-100">
+                <h1 class="text-4xl font-extrabold mb-2">Book Online</h1>
+                <p class="text-slate-500 mb-10">Book your job in online whenever it suits you</p>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Full Name" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 transition-all outline-none">
+                        <input type="email" placeholder="Email" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <input type="text" placeholder="Phone Number" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none">
+                    <input type="text" placeholder="Address" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <input type="text" placeholder="Post Code" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none">
+                        <input type="datetime-local" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none">
+                    </div>
+                    <textarea placeholder="What's the problem?" rows="4" class="w-full p-4 rounded-xl bg-slate-50 border-none ring-1 ring-slate-200 focus:ring-2 focus:ring-blue-600 outline-none"></textarea>
+                    <button class="w-full bg-blue-600 text-white py-4 rounded-xl font-bold text-lg hover:shadow-xl hover:bg-blue-700 transition-all">Submit Booking</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="terms" class="hidden page-transition py-24 max-w-4xl mx-auto px-6">
+    <h1 class="text-4xl font-extrabold mb-8">Terms & Conditions</h1>
+    <div class="prose prose-slate text-slate-600 space-y-6">
+        <p>Welcome to City Plumbers. By booking our services, you agree to the following terms:</p>
+        <h3 class="text-xl font-bold text-slate-900">1. Service Agreements</h3>
+        <p>All work is carried out by fully qualified engineers. We provide a 12-month guarantee on all workmanship. Parts are subject to the manufacturer's warranty.</p>
+        <h3 class="text-xl font-bold text-slate-900">2. Pricing & Payments</h3>
+        <p>Quotes provided over the phone are estimates. Final costs are based on the hourly rates displayed on our Prices page. Payment is due immediately upon completion of work.</p>
+    </div>
+</section>
+
+<section id="privacy" class="hidden page-transition py-24 max-w-4xl mx-auto px-6">
+    <h1 class="text-4xl font-extrabold mb-8">Privacy Policy</h1>
+    <div class="prose prose-slate text-slate-600 space-y-6">
+        <p>Your privacy is important to us. We only collect data necessary to provide our plumbing services.</p>
+        <h3 class="text-xl font-bold text-slate-900">Data Collection</h3>
+        <p>We collect your name, address, and contact details for booking and invoicing purposes. We do not sell your data to third parties.</p>
+    </div>
+</section>
+
+<section id="refund" class="hidden page-transition py-24 max-w-4xl mx-auto px-6">
+    <h1 class="text-4xl font-extrabold mb-8">Refund Policy</h1>
+    <div class="prose prose-slate text-slate-600 space-y-6">
+        <p>We aim for 100% customer satisfaction. Our refund policy is as follows:</p>
+        <h3 class="text-xl font-bold text-slate-900">1. Labor Costs</h3>
+        <p>Labor costs are generally non-refundable. However, if a repair fails within our 12-month warranty period due to faulty workmanship, we will fix it at no extra cost.</p>
+        <h3 class="text-xl font-bold text-slate-900">2. Cancellations</h3>
+        <p>Cancellations made within 2 hours of the scheduled arrival time may be subject to a minimum one-hour labor fee.</p>
+    </div>
+</section>
+
+<section id="services" class="hidden page-transition">
+    <div class="relative py-24 bg-slate-900 overflow-hidden">
+        <img src="img/services2.png" 
+             class="absolute inset-0 w-full h-full object-cover opacity-20" alt="Services Header">
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-6">Our Professional Services</h1>
+            <p class="text-blue-400 text-xl font-bold uppercase tracking-widest mb-8">Plumbing – Heating – Drainage – Installations – Gas work</p>
+            <p class="text-slate-300 max-w-3xl mx-auto text-lg leading-relaxed">
+                Your One Stop Plumbing and Heating Service in London. We provide a wide range of solutions, from unclogging toilets to installing new boilers, backed by a full **12 months guarantee**.
+            </p>
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="tel:02071125117" class="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20">
+                    <i class="fa-solid fa-phone-volume mr-2"></i> 0207 112 5117
+                </a>
+                <button onclick="showPage('book')" class="bg-white text-slate-900 px-8 py-4 rounded-xl font-bold text-lg hover:bg-slate-100 transition-all">Book Online</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-24 space-y-32">
+        
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-6">
+                <h2 class="text-3xl font-extrabold text-slate-900 leading-tight">Expert Engineering Across London</h2>
+                <p class="text-slate-600 leading-relaxed">
+                    Our team of fully qualified engineers in London represents one of the most dependable plumbing companies in the city. Whether you need breakdown servicing or plumbing installations for domestic or commercial purposes, you won’t find a more professional, friendly, or efficient group of specialists.
+                </p>
+                <div class="p-6 bg-blue-50 border-l-4 border-blue-600 rounded-r-2xl">
+                    <p class="text-blue-900 font-medium italic text-sm">
+                        "We are committed to reaching you within an hour for all emergency plumbing calls in London."
+                    </p>
+                </div>
+            </div>
+            <div class="rounded-[2rem] overflow-hidden shadow-2xl h-80">
+                <img src="img/plumber.png" class="w-full h-full object-cover">
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-sink"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">General Plumbing</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Expertise includes repairing or replacing taps, sanitary ware, pipework, and fixing leakages. Whether it’s a sink/basin fitting or a minor repair, we have the solutions.</p>
+                <ul class="text-xs space-y-2 text-slate-600 font-semibold mb-8">
+                    <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Tap Repairs & Replace</li>
+                    <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Pipework Solutions</li>
+                    <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Sanitary Ware Installation</li>
+                </ul>
+                <button onclick="showPage('book')" class="w-full py-3 border border-slate-200 rounded-xl font-bold text-sm hover:bg-slate-900 hover:text-white transition-all">Book This Service</button>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-red-100 text-red-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-red-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-fire"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Heating & Gas</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">Gas repairs, regular gas service, and safety inspections designed for peace of mind. Our commitment includes a one-hour response for all emergency gas calls.</p>
+                <ul class="text-xs space-y-2 text-slate-600 font-semibold mb-8">
+                    <li><i class="fa-solid fa-check text-red-500 mr-2"></i> Gas Safety Certificates</li>
+                    <li><i class="fa-solid fa-check text-red-500 mr-2"></i> Regular Gas Servicing</li>
+                    <li><i class="fa-solid fa-check text-red-500 mr-2"></i> Boiler Breakdown Service</li>
+                </ul>
+                <button onclick="showPage('book')" class="w-full py-3 border border-slate-200 rounded-xl font-bold text-sm hover:bg-slate-900 hover:text-white transition-all">Book This Service</button>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] p-8 shadow-sm border border-slate-100 hover:shadow-2xl hover:-translate-y-2 transition-all">
+                <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl mb-8 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+                    <i class="fa-solid fa-droplet-slash"></i>
+                </div>
+                <h3 class="text-2xl font-bold mb-4">Drainage Solutions</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">From unclogging toilets to resolving blocked showers and drains, we provide efficient, professional clearing services throughout London.</p>
+                <ul class="text-xs space-y-2 text-slate-600 font-semibold mb-8">
+                    <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Blocked Toilets & Sinks</li>
+                    <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Blocked Showers</li>
+                    <li><i class="fa-solid fa-check text-emerald-500 mr-2"></i> Emergency Unblocking</li>
+                </ul>
+                <button onclick="showPage('book')" class="w-full py-3 border border-slate-200 rounded-xl font-bold text-sm hover:bg-slate-900 hover:text-white transition-all">Book This Service</button>
+            </div>
+        </div>
+
+        <div class="relative overflow-hidden rounded-[3rem] bg-blue-600 p-12 lg:p-20 text-white">
+            <div class="relative z-10 grid lg:grid-cols-2 gap-16 items-center">
+                <div class="space-y-8">
+                    <h2 class="text-4xl font-extrabold leading-tight">Bathroom & Kitchen Specialists</h2>
+                    <p class="text-blue-100 text-lg">
+                        We assist with the design and construction of new bathrooms or kitchens. With extensive experience in repairing and installing various types, we guarantee top-notch results tailored to your home.
+                    </p>
+                    <div class="flex gap-6">
+                        <div class="text-center">
+                            <div class="text-4xl font-extrabold mb-1">10+</div>
+                            <div class="text-xs uppercase tracking-widest font-bold opacity-70">Years Experience</div>
+                        </div>
+                        <div class="text-center border-l border-white/20 pl-6">
+                            <div class="text-4xl font-extrabold mb-1">24/7</div>
+                            <div class="text-xs uppercase tracking-widest font-bold opacity-70">Emergency Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1584622781564-1d987f7333c1?auto=format&fit=crop&q=80&w=400" class="rounded-3xl shadow-xl hover:scale-105 transition-transform cursor-pointer">
+                    <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&q=80&w=400" class="rounded-3xl shadow-xl mt-8 hover:scale-105 transition-transform cursor-pointer">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact" class="hidden page-transition py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+            <h1 class="text-5xl font-extrabold text-slate-900 tracking-tight">Contact Us</h1>
+            <p class="text-lg text-slate-600 font-medium">Our team would love to hear from you. Whether it's an emergency or a planned project, we're here to help.</p>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-12 items-start">
+            
+            <div class="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-slate-200/60 border border-slate-100">
+                <form action="#" method="POST" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 ml-1">Full Name</label>
+                            <input type="text" placeholder="John Doe" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-bold text-slate-700 ml-1">Email Address</label>
+                            <input type="email" placeholder="john@example.com" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-600 outline-none transition-all">
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700 ml-1">Subject</label>
+                        <select class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-600 outline-none transition-all appearance-none">
+                            <option>General Inquiry</option>
+                            <option>Emergency Plumbing</option>
+                            <option>Boiler Service</option>
+                            <option>Quote Request</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-sm font-bold text-slate-700 ml-1">Message</label>
+                        <textarea rows="5" placeholder="How can we help you?" class="w-full px-6 py-4 rounded-2xl bg-slate-50 border-none focus:ring-2 focus:ring-blue-600 outline-none transition-all resize-none"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-blue-600 text-white py-5 rounded-2xl font-extrabold text-lg shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:-translate-y-1 transition-all">
+                        Submit Message
+                    </button>
+                </form>
+            </div>
+
+            <div class="space-y-8">
+                <div class="grid md:grid-cols-1 gap-4">
+                    <div class="flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Visit Us</p>
+                            <p class="text-slate-900 font-bold">27 Old Gloucester Street, London, WC1N 3AX</p>
+                        </div>
+                    </div>
+
+                    <a href="tel:02039166168" class="flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:border-blue-200 transition-colors">
+                        <div class="w-14 h-14 bg-emerald-50 text-emerald-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Call Anytime</p>
+                            <p class="text-slate-900 font-bold">0203 916 6168</p>
+                        </div>
+                    </a>
+
+                    <a href="mailto:contact@cityplumberslondon.co.uk" class="flex items-center gap-6 bg-white p-6 rounded-3xl border border-slate-100 shadow-sm hover:border-blue-200 transition-colors">
+                        <div class="w-14 h-14 bg-orange-50 text-orange-600 rounded-2xl flex items-center justify-center text-xl shrink-0">
+                            <i class="fa-solid fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Email Support</p>
+                            <p class="text-slate-900 font-bold">contact@cityplumberslondon.co.uk</p>
+                        </div>
+                    </a>
+                </div>
+
+               <div class="rounded-[2.5rem] overflow-hidden shadow-2xl h-80 border-8 border-white">
+    <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2482.68266228384!2d-0.1245086!3d51.5213336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48761b36288f1e49%3A0x5b5b0dd12b4c4157!2sCity%20Plumbers%20London!5e0!3m2!1sen!2suk!4v1712580000000!5m2!1sen!2suk" 
+        class="w-full h-full" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+            </div>
+
+        </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="bg-slate-900 text-slate-400 py-20 px-6 mt-20 border-t border-slate-800">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        <div class="space-y-6">
+            <div class="flex items-center cursor-pointer" onclick="showPage('home')">
+                <img src="img/logo.png" alt="City Plumbers Logo" class="h-14 w-auto brightness-2 invert">
+            </div>
+            <p class="text-sm leading-relaxed">
+                Offering unparalleled plumbing and heating solutions to ensure your comfort and safety across London. Professional service you can trust 24/7.
+            </p>
+            <div class="flex gap-4 text-xl">
+                <a href="#" class="hover:text-blue-500 transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-400 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" class="hover:text-pink-500 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div>
+            <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Quick Links</h4>
+            <ul class="space-y-4 text-sm">
+                <li><a href="javascript:void(0)" onclick="showPage('home')" class="hover:text-white transition-colors">Home</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('about')" class="hover:text-white transition-colors">About Us</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('services')" class="hover:text-white transition-colors">Our Services</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('prices')" class="hover:text-white transition-colors">Pricing Structure</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('book')" class="hover:text-white transition-colors text-blue-400 font-bold">Book a Plumber</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Support</h4>
+            <ul class="space-y-4 text-sm">
+                <li><a href="javascript:void(0)" onclick="showPage('terms')" class="hover:text-white transition-colors">Terms & Conditions</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('privacy')" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('refund')" class="hover:text-white transition-colors">Refund Policy</a></li>
+                <li><a href="javascript:void(0)" onclick="showPage('contact')" class="hover:text-white transition-colors">Help Center</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h4 class="text-white font-bold mb-6 uppercase tracking-wider text-sm">Contact Us</h4>
+            <ul class="space-y-4 text-sm">
+                <li class="flex items-start gap-3">
+                    <i class="fa-solid fa-location-dot text-blue-500 mt-1"></i>
+                    <span>27 Old Gloucester Street,<br>London, WC1N 3AX</span>
+                </li>
+                <li>
+                    <a href="tel:02039166168" class="flex items-center gap-3 hover:text-white transition-colors">
+                        <i class="fa-solid fa-phone text-blue-500"></i> 
+                        0203 916 6168
+                    </a>
+                </li>
+                <li>
+                    <a href="mailto:contact@cityplumberslondon.co.uk" class="flex items-center gap-3 hover:text-white transition-colors">
+                        <i class="fa-solid fa-envelope text-blue-500"></i> 
+                        contact@cityplumberslondon.co.uk
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto border-t border-slate-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+        <p>© Copyright 2026 City Plumbers London, All Rights Reserved</p>
+        <p>Developed by <span class="text-blue-500"><a href="https://armanali0312112-byte.github.io/Mubarak-Ali/">Mubarak</a></span></p>
+    </div>
+</footer>
+
+    <script>
+        // MOBILE MENU TOGGLE
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => menu.classList.toggle('hidden'));
+
+        // SPA PAGE SWITCHER
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = ['home', 'about', 'services', 'prices', 'book', 'contact', 'terms', 'privacy', 'refund'];
+            pages.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) element.classList.add('hidden');
+            });
+            
+            // Show requested page
+            const activePage = document.getElementById(pageId);
+            if (activePage) {
+                activePage.classList.remove('hidden');
+                window.scrollTo(0, 0);
+            }
+
+            // Close mobile menu
+            menu.classList.add('hidden');
+        }
+
+        // NAVBAR SCROLL EFFECT
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('py-2', 'shadow-md');
+                nav.classList.remove('py-4');
+            } else {
+                nav.classList.remove('py-2', 'shadow-md');
+                nav.classList.add('py-4');
+            }
+        });
+
+        let currentSlide = 0;
+const slider = document.getElementById('slider');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = 3;
+
+function updateSlider() {
+    // Move the slider
+    slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+    
+    // Update dots
+    dots.forEach((dot, index) => {
+        if (index === currentSlide) {
+            dot.classList.add('bg-blue-600', 'w-8');
+            dot.classList.remove('bg-white/40');
+        } else {
+            dot.classList.remove('bg-blue-600', 'w-8');
+            dot.classList.add('bg-white/40');
+        }
+    });
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateSlider();
+}
+
+function goToSlide(index) {
+    currentSlide = index;
+    updateSlider();
+}
+
+// Auto-play
+setInterval(nextSlide, 5000);
+
+// Initialize
+updateSlider();
+
+let reviewIndex = 0;
+const reviewSlider = document.getElementById('review-slider');
+const totalReviews = 5; // Set to the number of review divs you have
+
+function autoSlideReviews() {
+    reviewIndex++;
+    // Adjust logic for desktop (3 at once) vs mobile (1 at once)
+    const isMobile = window.innerWidth < 768;
+    const limit = isMobile ? totalReviews : totalReviews - 2;
+
+    if (reviewIndex >= limit) {
+        reviewIndex = 0;
+    }
+    
+    const moveAmount = isMobile ? (reviewIndex * 100) : (reviewIndex * 33.33);
+    reviewSlider.style.transform = `translateX(-${moveAmount}%)`;
+}
+
+// Slide every 4 seconds
+setInterval(autoSlideReviews, 4000);
+    </script>
+</body>
+</html>
